@@ -62,7 +62,7 @@ function predictPrice() {
   
   const form_data = extract_form_data();
 
-  postData("http://127.0.0.1:5000/predict", form_data)
+  postData("https://hpp-project.herokuapp.com/predict", form_data)
     .then(data => data['prediction'])
     .then(prediction => {
       const resultsDataElement = buildResults(prediction);

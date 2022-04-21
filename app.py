@@ -14,7 +14,7 @@ def hello_world():
 
 @app.route('/predict', methods=['POST'])
 def create_task():
-    if not request.json:
+    if not request.get_json():
         abort(400)
     prediction = predict(request.json)
     return jsonify({'done': True, 'prediction': prediction[0]}), 201
